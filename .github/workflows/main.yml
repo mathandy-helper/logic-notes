@@ -17,6 +17,5 @@ jobs:
           path: main.pdf
       - name: Upload PDF to Releases Page
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: main.pdf
