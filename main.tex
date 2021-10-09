@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{xcolor}
+
+\begin{document}
+\huge
+
+\noindent DeMorgan's Law for \textbf{NAND}:\\
+$\overline{xy} = \bar{x} + \bar{y}$\\
+{\large Intuition from English:\vspace{-.125in}\\It's not true that $x$ and $y$ are both true = either $x$ is false or $y$ is false}
+\vspace{0.25in}
+
+\noindent DeMorgan's Law for \textbf{NOR}:\\
+$\overline{x + y} = \bar{x}\bar{y}$\\
+{\large Intuition from English:\vspace{-.125in}\\It's not true that $x$ or $y$ (or both) are true = both $x$ and $y$ are false}
+
+\noindent {\Large ``Neither {x} nor {y}."}
+
+\vspace{0.25in}\hrule\vspace{.25in}
+
+\noindent \boxed{\raisebox{.04in}{${}^{\text{\small not}}_{\text{\small not}}$}\textbf{OR}{\small\raisebox{0.07in}{not}} $\:=\:$ \textbf{AND}}\\
+{\large since \phantom{we have}}$\bar{x} + \bar{y} = \overline{xy}$\\
+{\large by inverting both sides}\\
+{\large we have \phantom{since}}$\overline{\bar{x} + \bar{y}} = xy$
+\vspace{0.25in}
+
+\noindent \boxed{\raisebox{.04in}{${}^{\text{\small not}}_{\text{\small not}}$}\textbf{AND}{\small\raisebox{0.07in}{not}} $\:=\:$ \textbf{OR}}\\
+{\large since \phantom{we have}}$\bar{x}\bar{y} = \overline{x + y}$\\
+{\large by inverting both sides}\\
+{\large we have \phantom{since}}$\overline{\bar{x}\bar{y}} = x + y$
+
+\vspace{0.25in}\hrule\vspace{.25in}
+
+\noindent \textbf{XOR}:\\
+$x \oplus y = x\bar{y} + \bar{x}y$\\
+{\large This or that but not both (i.e. exactly one is true).}
+\vspace{0.25in}
+
+\noindent \textbf{Inverted XOR} (aka \textbf{NXOR} or \textbf{XNOR}):\\
+$\overline{x \oplus y} = xy + \bar{x}\bar{y}$\\
+{\large Neither are true, or both are true.}
+
+% Proof:
+% \begin{flalign*}
+%     \overline{x \:\mathrm{XOR}\: y} = \overline{x \oplus y} &= \overline{x\bar{y} + \bar{x}y}&&&\\
+%     &= \left(\overline{x\bar{y}}\right)\left(\overline{\bar{x}y}\right)&&&\\
+%     &= \boxed{\left(\bar{x} + y\right)\left(x + \bar{y}\right)}&\leftarrow\text{POS}&&\\
+%     &= \cancel{\bar{x}x} + yx + \bar{x}\bar{y} + \cancel{y\bar{y}}&&&\\
+%     &= \boxed{xy + \bar{x}\bar{y}}&\leftarrow\text{SOP}&&
+% \end{flalign*}
+
+\hfill {\color{gray}\normalsize Created by Andrew Port}
+\end{document}
